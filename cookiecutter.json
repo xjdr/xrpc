@@ -1,0 +1,8 @@
+{
+  "app_name": "demo-app",
+  "java_package": "demo",
+  "java_package_dir": "{{ cookiecutter.java_package.replace('.', '/') }}",
+  "_copy_without_render": [
+    "JavaStandards.md"
+  ]
+}
