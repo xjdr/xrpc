@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package xjeffrose.dino;
+
+option java_package = "{{cookiecutter.java_package}}";
+
+message Dino {
+  // Name of the Person
+  required string name = 1;
+
+  // Fav Color
+  required string fav_color = 2;
+
+}
