@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-xrpc_pid=$$
-echo $xrpc_pid
+{{cookiecutter.app_name.replace('-', '_')}}_pid=$$
+echo ${{cookiecutter.app_name.replace('-', '_')}}_pid
 
 path_separator=':'
 is_windows=`uname -o | grep -ic cygwin`
@@ -115,7 +115,7 @@ if [ ! -d "$LOG_DIR" ]; then
   `mkdir -p "$LOG_DIR"; chmod 666 "$LOG_DIR"`
 fi
 
-echo $xrpc_pid > $pid_file
+echo ${{cookiecutter.app_name.replace('-', '_')}}_pid > $pid_file
 $java_path  -ea          \
   $JAVA_OPTS                      \
   -Djava.net.preferIPv4Stack=true \
