@@ -11,7 +11,7 @@ if [ $is_windows == 1 ]; then
         script_full_path=`cygpath -wm $script_full_path`
 fi
 base_dir=$(dirname $script_full_path)
-pid_file=/var/run/xrpc.pid
+pid_file=/var/run/{{cookiecutter.app_name}}.pid
 
 INPUT_CP=
 INPUT_CONF=${base_dir}/application.conf
@@ -36,7 +36,7 @@ cat << EOF
       OCC handling (possible values: none (default), passthru, or bidirectional)
 
     --env
-      ENV for running xrpc. For e.g. msmaster1int or msmaster2int
+      ENV for running {{cookiecutter.app_name}}. For e.g. msmaster1int or msmaster2int
 
     --vip
       VIP per pool feature is enabled by default unless this flag is set to "false"
@@ -72,7 +72,7 @@ do
 
     --) shift; break;;
     *) echo "internal error on option: \`$1'!" ; \
-       echo "terminating xrpc..." ; exit 1 ;;
+       echo "terminating {{cookiecutter.app_name}}..." ; exit 1 ;;
   esac
 done
 
@@ -107,10 +107,10 @@ if [ "$JAVA_HOME" != '' ]; then
 fi
 java_version=$($java_path -version 2>&1 | awk -F '"' '/version/ {print $2}' | awk -F '.' '/\./ {print $1"."$2}')
 if [[ "$java_version" < "1.8" ]]; then
-  echo "xrpc requires Java version 1.8 or later!!!"
+  echo "{{cookiecutter.app_name}} requires Java version 1.8 or later!!!"
 fi
 
-LOG_DIR="/var/log/xrpc"
+LOG_DIR="/var/log/{{cookiecutter.app_name}}"
 if [ ! -d "$LOG_DIR" ]; then
   `mkdir -p "$LOG_DIR"; chmod 666 "$LOG_DIR"`
 fi
