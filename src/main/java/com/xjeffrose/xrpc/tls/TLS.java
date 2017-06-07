@@ -1,4 +1,4 @@
-package com.xjeffrose.xrpc.tls;
+package {{cookiecutter.java_package}}.tls;
 
 
 import com.google.common.collect.ImmutableList;

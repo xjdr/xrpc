@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package xjeffrose.dino;
 
-option java_package = "com.xjeffrose.xrpc";
+option java_package = "{{cookiecutter.java_package}}";
 
 message Dino {
   // Name of the Person

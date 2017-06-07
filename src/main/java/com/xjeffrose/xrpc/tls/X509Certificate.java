@@ -1,4 +1,4 @@
-package com.xjeffrose.xrpc.tls;
+package {{cookiecutter.java_package}}.tls;
 
 import java.security.PrivateKey;
 import lombok.extern.slf4j.Slf4j;

@@ -1,9 +1,9 @@
-package com.xjeffrose.xrpc.http;
+package {{cookiecutter.java_package}}.http;
 
-import com.xjeffrose.xrpc.XConfig;
-import com.xjeffrose.xrpc.tls.TLS;
-import com.xjeffrose.xrpc.logging.MessageLogger;
-import com.xjeffrose.xrpc.logging.ExceptionLogger;
+import {{cookiecutter.java_package}}.XConfig;
+import {{cookiecutter.java_package}}.tls.TLS;
+import {{cookiecutter.java_package}}.logging.MessageLogger;
+import {{cookiecutter.java_package}}.logging.ExceptionLogger;
 
 import static com.codahale.metrics.MetricRegistry.name;
 

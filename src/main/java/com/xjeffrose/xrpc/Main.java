@@ -1,7 +1,7 @@
-package com.xjeffrose.xrpc;
+package {{cookiecutter.java_package}};
 
-import com.xjeffrose.xrpc.http.Router;
-import com.xjeffrose.xrpc.http.Route;
+import {{cookiecutter.java_package}}.http.Router;
+import {{cookiecutter.java_package}}.http.Route;
 
 import static io.netty.handler.codec.http.HttpHeaderNames.CONTENT_LENGTH;
 import static io.netty.handler.codec.http.HttpHeaderNames.CONTENT_TYPE;

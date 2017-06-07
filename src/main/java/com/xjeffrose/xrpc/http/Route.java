@@ -1,4 +1,4 @@
-package com.xjeffrose.xrpc.http;
+package {{cookiecutter.java_package}}.http;
 
 import java.util.ArrayList;
 import java.util.HashMap;

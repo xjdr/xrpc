@@ -1,4 +1,4 @@
-package com.xjeffrose.xrpc.tls;
+package {{cookiecutter.java_package}}.tls;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

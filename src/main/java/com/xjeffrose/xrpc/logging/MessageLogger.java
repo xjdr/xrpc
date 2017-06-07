@@ -1,4 +1,4 @@
-package com.xjeffrose.xrpc.logging;
+package {{cookiecutter.java_package}}.logging;
 
 
 import io.netty.buffer.ByteBuf;

@@ -1,4 +1,4 @@
-package com.xjeffrose.xrpc;
+package {{cookiecutter.java_package}};
 
 import java.io.IOException;
 
