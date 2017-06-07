@@ -31,7 +31,7 @@ import okio.ByteString;
 
 
 @Slf4j
-public class Example {
+public class Main {
 
   public static void main(String[] args) {
     final List<Person> people = new ArrayList<>();
