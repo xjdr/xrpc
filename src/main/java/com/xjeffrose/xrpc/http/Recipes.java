@@ -26,6 +26,7 @@ public final class Recipes {
   public static enum ContentType {
     Application_Json("application/json"),
     Text_Plain("text/plain"),
+    Application_Octet_Stream("application/octet-stream"),
     Text_Html("text/html");
 
     private final String value;
@@ -99,9 +100,18 @@ public final class Recipes {
     return newResponse(HttpResponseStatus.OK, payload, ContentType.Text_Plain);
   }
 
+  public static HttpResponse newResponseOk(ByteBuf payload) {
+    return newResponse(HttpResponseStatus.OK, payload, ContentType.Text_Plain);
+  }
+
   public static HttpResponse newResponseOk(String payload, ContentType contentType) {
     return newResponse(HttpResponseStatus.OK, payload, contentType);
   }
+
+  public static HttpResponse newResponseOk(ByteBuf payload, ContentType contentType) {
+    return newResponse(HttpResponseStatus.OK, payload, contentType);
+  }
+
   // OK }}}
 
   // BAD_REQUEST {{{

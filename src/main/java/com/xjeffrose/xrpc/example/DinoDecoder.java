@@ -1,4 +1,4 @@
-package com.xjeffrose.xrpc;
+package com.xjeffrose.xrpc.example;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ public class DinoDecoder {
 
     byte[] bytes = new byte[System.in.available()];
     System.in.read(bytes, 0, bytes.length);
-    Dino dino = Dino.ADAPTER.decode(bytes);
+    DinoResponse dino = DinoResponse.ADAPTER.decode(bytes);
 
     System.out.println(dino);
   }

@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package xjeffrose.dino;
+
+option java_package = "com.xjeffrose.xrpc.example";
+
+message Dino {
+  // Name of the Person
+  required string name = 1;
+}
+
+message DinoResponse {
+  // List of Dinos
+  repeated Dino dinos = 1;
+}

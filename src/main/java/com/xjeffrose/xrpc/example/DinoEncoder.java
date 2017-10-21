@@ -1,4 +1,4 @@
-package com.xjeffrose.xrpc;
+package com.xjeffrose.xrpc.example;
 
 import java.io.IOException;
 
@@ -8,7 +8,6 @@ public class DinoEncoder {
 
     Dino dino = new Dino.Builder()
       .name(args[0])
-      .fav_color(args[1])
       .build();
 
     byte[] bytes = Dino.ADAPTER.encode(dino);
