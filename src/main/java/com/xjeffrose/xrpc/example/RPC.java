@@ -49,6 +49,8 @@ public class RPC {
       d.ifPresent(dinos::add);
     } catch (IOException e) {
       return  Recipes.newResponseBadRequest(e.getMessage());
+    } catch (IllegalStateException e) {
+      return  Recipes.newResponseBadRequest("Error in request body " + "\n\n" + e.getMessage());
     }
 
     return Recipes.newResponseOk("ok");
@@ -58,10 +60,6 @@ public class RPC {
     ByteBuf bb = Unpooled.compositeBuffer();
 
     DinoResponse dr = new DinoResponse.Builder().dinos(dinos).build();
-
-    for (Dino d : dinos) {
-      log.info(d.toString());
-    }
 
     bb.writeBytes(DinoResponse.ADAPTER.encode(dr));
 
@@ -74,20 +72,18 @@ public class RPC {
     BiFunction<FullHttpRequest, Route, HttpResponse> dinoHandler = (req, route) -> {
       HttpResponse resp;
       String path = route.groups(req.uri()).get("method");
+
       switch (path) {
         case "addDino":
           return addDino(req);
 
         case "listDinos":
-          resp = listDinos(req);
-          break;
+          return listDinos(req);
 
         default:
-          resp = Recipes.newResponseBadRequest("Invalid Method");
-          break;
+          return Recipes.newResponseBadRequest("Invalid Method Name");
       }
 
-      return resp;
     };
 
     router.addRoute("/dinos/:method", dinoHandler);
